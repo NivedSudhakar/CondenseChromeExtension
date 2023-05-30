@@ -2,9 +2,9 @@ let changeColor = document.getElementById("changeColor");
 let table = document.getElementById("linkTable");
 let test = document.getElementById("test");
 
+window.onload = populateTable;
 
-
-changeColor.addEventListener("click", async() => {
+async function populateTable() {
 
   
   let inputtag = "a";
@@ -26,7 +26,7 @@ changeColor.addEventListener("click", async() => {
     })
     .then(injectionResults => {
       for (var i = table.rows.length-1; i >= 0 ; i--) { 
-        table.removeChild(table.rows[i]); 
+        table.deleteRow(i); 
         
       } 
       
@@ -65,7 +65,7 @@ changeColor.addEventListener("click", async() => {
 
     });
 
-  });
+  }
 
 
 
